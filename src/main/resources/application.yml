@@ -1,0 +1,18 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: tukuntech-config-server
+
+  profiles:
+    active: native
+
+  cloud:
+    compatibility-verifier:
+      enabled: false
+
+    config:
+      server:
+        native:
+          search-locations: file:///E:/UPC/TUKUNTECH/Micro/config-repo
