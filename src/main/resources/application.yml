@@ -5,14 +5,12 @@ spring:
   application:
     name: tukuntech-config-server
 
-  profiles:
-    active: native
-
   cloud:
     compatibility-verifier:
       enabled: false
-
     config:
       server:
-        native:
-          search-locations: file:///E:/UPC/TUKUNTECH/Micro/config-repo
+        git:
+          uri: https://github.com/TukunTechBack-Microservices/tukuntech-config-repo.git
+          default-label: main
+          clone-on-start: true
