@@ -1,5 +1,5 @@
 server:
-  port: 8888
+  port: ${PORT:8888}
 
 spring:
   application:
@@ -11,6 +11,15 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/TukunTechBack-Microservices/tukuntech-config-repo.git
-          default-label: main
+          uri: ${CONFIG_REPO_URI:https://github.com/TukunTechBack-Microservices/tukuntech-config-repo.git}
+          default-label: ${CONFIG_REPO_BRANCH:main}
           clone-on-start: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: never
